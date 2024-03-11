@@ -1,3 +1,6 @@
+# [[ Options ]]
+add-highlighter global/ number-lines -relative
+
 # plug.kak el plugin manager
 evaluate-commands %sh{
     plugins="$kak_config/plugins"
@@ -52,9 +55,8 @@ plug "andreyorst/smarttab.kak" defer smarttab %{
 
 }
 
-# No funciona
 hook global WinSetOption filetype=ruby %{
-    set-option indentwidth 2
+    set-option buffer indentwidth 2
 }
 
 
