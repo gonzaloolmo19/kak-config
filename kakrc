@@ -1,5 +1,6 @@
 # [[ Options ]]
 add-highlighter global/ number-lines -relative
+colorscheme palenight
 
 # plug.kak el plugin manager
 evaluate-commands %sh{
@@ -21,12 +22,6 @@ plug "kakoune-lsp/kakoune-lsp" do %{
 }
 hook global WinSetOption filetype=(rust|python|c|cpp|ruby) %{
     lsp-enable-window
-}
-
-
-# Catppuccin
-plug "catppuccin/kakoune" theme config %{
-	colorscheme catppuccin_mocha
 }
 
 # Autopairs
