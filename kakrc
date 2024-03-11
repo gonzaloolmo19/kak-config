@@ -16,8 +16,7 @@ plug "kakoune-lsp/kakoune-lsp" do %{
     mkdir -p ~/.config/kak-lsp
     cp -n kak-lsp.toml ~/.config/kak-lsp/
 }
-
-hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp) %{
+hook global WinSetOption filetype=(rust|python|c|cpp|ruby) %{
     lsp-enable-window
 }
 
@@ -38,3 +37,29 @@ plug "gustavo-hms/luar" %{
         require-module peneira
     }
 }
+
+# smart indent
+plug "andreyorst/smarttab.kak" defer smarttab %{
+    # when `backspace' is pressed, 4 spaces are deleted at once
+    set-option global softtabstop 4
+} config %{
+    # these languages will use `expandtab' behavior
+    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl|ruby) expandtab
+    # these languages will use `noexpandtab' behavior
+    hook global WinSetOption filetype=(makefile|gas) noexpandtab
+    # these languages will use `smarttab' behavior
+    hook global WinSetOption filetype=(c|cpp) smarttab
+
+}
+
+# No funciona
+hook global WinSetOption filetype=ruby %{
+    set-option indentwidth 2
+}
+
+
+
+# [[ Mappings ]]
+map -docstring "File picker" global user f :peneira-files<ret> 
+
+
