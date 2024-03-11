@@ -31,3 +31,10 @@ plug "catppuccin/kakoune" theme config %{
 plug "alexherbo2/auto-pairs.kak"
 set-option global auto_pairs ( ) { } [ ] '"' '"' "'" "'" ` ` “ ” ‘ ’ « » ‹ ›
 enable-auto-pairs
+
+# fuzzy finder
+plug "gustavo-hms/luar" %{
+    plug "gustavo-hms/peneira" %{
+        require-module peneira
+    }
+}
