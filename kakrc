@@ -55,8 +55,7 @@ hook global WinSetOption filetype=ruby %{
 }
 
 
-
 # [[ Mappings ]]
-map -docstring "File picker" global user f :peneira-files<ret> 
+map global user f :peneira-files<ret>            -docstring "File picker" 
 
 
