@@ -1,6 +1,6 @@
 # [[ Options ]]
 add-highlighter global/ number-lines -relative -hlcursor
-colorscheme palenight
+colorscheme monokai
 set-option global tabstop 4
 
 # highligth trailing white-spaces
@@ -62,8 +62,9 @@ plug "kakoune-lsp/kakoune-lsp" do %{
     mkdir -p ~/.config/kak-lsp
     cp -n kak-lsp.toml ~/.config/kak-lsp/
 }
-hook global WinSetOption filetype=(rust|python|c|cpp|ruby) %{
+hook global WinSetOption filetype=(rust|python|c|cpp|ruby|java|bash) %{
     lsp-enable-window
+    lsp-inlay-hints-enable global
 }
 
 # Autopairs
@@ -84,7 +85,7 @@ plug "andreyorst/smarttab.kak" defer smarttab %{
     set-option global softtabstop 4
 } config %{
     # these languages will use `expandtab' behavior
-    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl|ruby) expandtab
+    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl|ruby|java) expandtab
     # these languages will use `noexpandtab' behavior
     hook global WinSetOption filetype=(makefile|gas) noexpandtab
     # these languages will use `smarttab' behavior
@@ -92,15 +93,32 @@ plug "andreyorst/smarttab.kak" defer smarttab %{
 
 }
 
-hook global WinSetOption filetype=ruby %{
-    set-option buffer indentwidth 2
-}
 
 # fzf
 plug "andreyorst/fzf.kak"
 
 
+# [[ Language specific ]]
+hook global WinSetOption filetype=ruby %{
+    set-option buffer indentwidth 2
+}
+
+
 # [[ Mappings ]]
-map global user f :fzf-mode<ret>            -docstring "fzf" 
+map global user f :fzf-mode<ret>            -docstring "fzf"
+map global user q :lsp-diagnostics<ret>          -docstring "Show LSP diagnostics"
+
+
+# Los dos siguientes bloques son para poder ciclar por el menu
+# de compleciones con tab y s-tab en sentido contrario.
+hook global InsertCompletionShow .* %{
+    map window insert <tab> <c-n>
+    map window insert <s-tab> <c-p>
+}
+
+hook global InsertCompletionHide .* %{
+    unmap window insert <tab> <c-n>
+    unmap window insert <s-tab> <c-p>
+}
 
 
