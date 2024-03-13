@@ -1,3 +1,12 @@
+# [[ User scripts ]]
+
+# Por problemas que desconozco cada vez que quiera hacer un kakscript tengo
+# que hacer source por el hecho de que no puedo usar la carpeta autoload.
+# Si lo hago no me funcionan los plugins.
+source "%val{config}/user/surround.kak"
+
+
+
 # [[ Options ]]
 add-highlighter global/ number-lines -relative -hlcursor
 colorscheme kanagawa
@@ -72,12 +81,6 @@ plug "alexherbo2/auto-pairs.kak"
 set-option global auto_pairs ( ) { } [ ] '"' '"' "'" "'" ` ` “ ” ‘ ’ « » ‹ ›
 enable-auto-pairs
 
-# fuzzy finder
-plug "gustavo-hms/luar" %{
-    plug "gustavo-hms/peneira" %{
-        require-module peneira
-    }
-}
 
 # smart indent
 plug "andreyorst/smarttab.kak" defer smarttab %{
@@ -102,6 +105,9 @@ plug "andreyorst/fzf.kak"
 hook global WinSetOption filetype=ruby %{
     set-option buffer indentwidth 2
 }
+
+# surround
+# plug "h-youhei/kakoune-surround"
 
 
 # [[ Mappings ]]
