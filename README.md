@@ -1,5 +1,5 @@
 # Kakoune Config
-This my kakoune config. It is just a prototype to experiment with this editor.
+This my kakoune config. 
 
 # Installation
 You need kakoune installed and just clone this repo to ~/.config/kak/
