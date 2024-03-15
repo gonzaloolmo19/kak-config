@@ -6,7 +6,14 @@
 source "%val{config}/user/surround.kak"
 source "%val{config}/user/options.kak"
 source "%val{config}/user/mappings.kak"
+source "%val{config}/user/just.kak"
 
+
+# hago que el comando :make realmente ejecute just. Esto
+# lo hago porque casi nunco utilizo makefiles. Si alguna vez quiero
+# ambas funcionalidades puedo copiar el script make.kak (esta en el
+# source code) y modificarlo para que cree un comando :just.
+set-option global makecmd 'just'
 
 
 # [[ Plugins ]]

@@ -7,15 +7,15 @@ map global user q :lsp-diagnostics<ret>          -docstring "Show LSP diagnostic
 
 # Los dos siguientes bloques son para poder ciclar por el menu
 # de compleciones con tab y s-tab en sentido contrario.
-hook global InsertCompletionShow .* %{
-    map window insert <tab> <c-n>
-    map window insert <s-tab> <c-p>
-}
-
-hook global InsertCompletionHide .* %{
-    unmap window insert <tab> <c-n>
-    unmap window insert <s-tab> <c-p>
-}
+# hook global InsertCompletionShow .* %{
+#     map window insert <tab> <c-n>
+#     map window insert <s-tab> <c-p>
+# }
+# 
+# hook global InsertCompletionHide .* %{
+#     unmap window insert <tab> <c-n>
+#     unmap window insert <s-tab> <c-p>
+# }
 
 
 # LSP mappings
