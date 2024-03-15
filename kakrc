@@ -7,6 +7,7 @@ source "%val{config}/user/surround.kak"
 source "%val{config}/user/options.kak"
 source "%val{config}/user/mappings.kak"
 source "%val{config}/user/just.kak"
+source "%val{config}/user/harpoon.kak"
 
 
 
