@@ -1,9 +1,8 @@
 
 
 # [[ Mappings ]]
-map global user f :fzf-mode<ret>            -docstring "fzf"
-map global user q :lsp-diagnostics<ret>          -docstring "Show LSP diagnostics"
-
+map global user f :fzf-mode<ret>                                                         -docstring "fzf"
+map global user / ':grepfile<ret>'                  -docstring 'grep in curren buffer'
 
 # Los dos siguientes bloques son para poder ciclar por el menu
 # de compleciones con tab y s-tab en sentido contrario.
@@ -28,3 +27,9 @@ map global object t '<a-semicolon>lsp-object Class Interface Struct<ret>' -docst
 map global object d '<a-semicolon>lsp-diagnostic-object --include-warnings<ret>' -docstring 'LSP errors and warnings'
 map global object D '<a-semicolon>lsp-diagnostic-object<ret>' -docstring 'LSP errors'
 
+# Harpoon
+harpoon-add-bindings
+
+
+# zellij
+map global user w %{:enter-user-mode window-zellij<ret>} -docstring "window management (zellij)"

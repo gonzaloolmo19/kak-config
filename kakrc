@@ -5,11 +5,12 @@
 # Si lo hago no me funcionan los plugins.
 source "%val{config}/user/surround.kak"
 source "%val{config}/user/options.kak"
-source "%val{config}/user/mappings.kak"
 source "%val{config}/user/just.kak"
 source "%val{config}/user/harpoon.kak"
-
-
+source "%val{config}/user/finder.kak"
+source "%val{config}/user/zellij.kak"
+source "%val{config}/user/small_commands.kak"
+source "%val{config}/user/mappings.kak"
 
 
 # [[ Plugins ]]
