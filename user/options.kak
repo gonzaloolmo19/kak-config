@@ -2,15 +2,17 @@
 
 # [[ Options ]]
 
-# hago que el comando :make realmente ejecute just. Esto
-# lo hago porque casi nunco utilizo makefiles. Si alguna vez quiero
-# ambas funcionalidades puedo copiar el script make.kak (esta en el
-# source code) y modificarlo para que cree un comando :just.
-# set-option global makecmd 'just'
-
-
-add-highlighter global/ number-lines -relative -hlcursor
 colorscheme kanagawa
+
+# Pongo el flag -j8 para que paralelice la compilacion de las cosas
+set-option global makecmd 'make -j8'
+
+# Uso ripgrep en lugar de grep para mayor velocidad en grandes repositorios
+set-option global grepcmd 'rg -Hn --column --smart-case --sort path'
+
+# Relative line numbers
+add-highlighter global/ number-lines -relative -hlcursor
+
 set-option global tabstop 4
 
 # highligth trailing white-spaces
