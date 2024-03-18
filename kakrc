@@ -10,6 +10,7 @@ source "%val{config}/user/harpoon.kak"
 source "%val{config}/user/file_pickers.kak"
 source "%val{config}/user/zellij.kak"
 source "%val{config}/user/small_commands.kak"
+source "%val{config}/user/zk.kak"
 source "%val{config}/user/mappings.kak"
 
 
@@ -32,7 +33,7 @@ plug "kakoune-lsp/kakoune-lsp" do %{
     mkdir -p ~/.config/kak-lsp
     cp -n kak-lsp.toml ~/.config/kak-lsp/
 }
-hook global WinSetOption filetype=(rust|python|c|cpp|ruby|java|bash) %{
+hook global WinSetOption filetype=(rust|python|c|cpp|ruby|java|bash|markdown) %{
     lsp-enable-window
     lsp-inlay-hints-enable global
 }
