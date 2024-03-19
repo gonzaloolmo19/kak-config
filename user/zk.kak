@@ -9,9 +9,12 @@ define-command -params 1..2 \
         }
         evaluate-commands %sh{
             # Asi nos aseguramos que se habra la nota que ha sido creada mas recientemente
-            file=$(fd --type file "$1" -x stat --format="%w %n" {} | sort -n | cut -d " " -f 4 | tail -1)
+            # BUG: No encuentra cuando los nombres son con varias palabras.
+            name=$(echo $1 | tr " " "-")
+            file=$(fd -i --type file "$name" -x stat --format="%w %n" {} | sort -n | cut -d " " -f 4 | tail -1)
+            # echo $file
 
-            printf %s\\n "execute-keys ':e $file<ret>'"
+                printf %s\\n "edit $file"
         }
     }
 
@@ -23,8 +26,9 @@ define-command -params 1..2 \
             zk new -t "$@" --no-input
         }
         evaluate-commands %sh{
-            # Asi nos aseguramos que se habra la nota que ha sido creada mas recientemente
-            file=$(fd --type file "$1" -x stat --format="%w %n" {} | sort -n | cut -d " " -f 4 | tail -1)
+            # Asi nosee aseguramos que se habra la nota que ha sido creada mas recientemente
+            name=$(echo $1 | tr " " "-")
+            file=$(fd -i --type file "$name" -x stat --format="%w %n" {} | sort -n | tail -1 | cut -d " " -f 4 | cut -c 3-)
 
             # Initialize the path variable to the current directory
             path=$(dirname "$kak_buffile")
