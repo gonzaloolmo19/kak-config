@@ -23,6 +23,10 @@ map global object t '<a-semicolon>lsp-object Class Interface Struct<ret>'       
 map global object d '<a-semicolon>lsp-diagnostic-object --include-warnings<ret>'    -docstring 'LSP errors and warnings'
 map global object D '<a-semicolon>lsp-diagnostic-object<ret>'                       -docstring 'LSP errors'
 
+# Broot mappings
+map global user t ':br-vert<ret>' -docstring 'Open broot in a vertical split'
+map global user T ':br-hor<ret>' -docstring 'Open broot in a horizontal split'
+
 # zellij
 map global user w %{:enter-user-mode window-zellij<ret>}                            -docstring "window management (zellij)"
 

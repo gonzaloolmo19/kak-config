@@ -11,6 +11,7 @@ source "%val{config}/user/file_pickers.kak"
 source "%val{config}/user/zellij.kak"
 source "%val{config}/user/small_commands.kak"
 source "%val{config}/user/zk.kak"
+source "%val{config}/user/broot.kak"
 source "%val{config}/user/mappings.kak"
 
 
