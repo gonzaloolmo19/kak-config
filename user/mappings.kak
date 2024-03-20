@@ -33,6 +33,11 @@ map global user w %{:enter-user-mode window-zellij<ret>}                        
 # fzf mode
 map global user z :fzf-mode<ret>                                                    -docstring "fzf mode"
 
+# zk
+hook global WinSetOption filetype=markdown %{
+    map global user n ':enter-user-mode zk<ret>'    -docstring 'zk mode'
+}
+
 
 
 # Los dos siguientes bloques son para poder ciclar por el menu

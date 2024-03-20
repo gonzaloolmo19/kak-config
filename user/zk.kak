@@ -81,3 +81,8 @@ define-command -docstring %{
             }
         }
     }
+
+declare-user-mode zk
+map global zk n ':zk-new '                      -docstring 'Create and open new zk node'
+map global zk l ':zk-insert-link<ret>'          -docstring 'Insert a link to a node'
+map global zk k ':zk-insert-new-node-link<ret>' -docstring 'Insert a link to a non-existent node (creates it)'
