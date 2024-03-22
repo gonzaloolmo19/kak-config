@@ -34,7 +34,7 @@ plug "kakoune-lsp/kakoune-lsp" do %{
     mkdir -p ~/.config/kak-lsp
     cp -n kak-lsp.toml ~/.config/kak-lsp/
 }
-hook global WinSetOption filetype=(rust|python|c|cpp|ruby|java|bash|markdown) %{
+hook global WinSetOption filetype=(rust|python|c|cpp|ruby|java|bash|markdown|latex) %{
     lsp-enable-window
     lsp-inlay-hints-enable global
 }
