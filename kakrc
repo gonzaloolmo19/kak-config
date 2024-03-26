@@ -51,7 +51,7 @@ plug "andreyorst/smarttab.kak" defer smarttab %{
     set-option global softtabstop 4
 } config %{
     # these languages will use `expandtab' behavior
-    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl|ruby|java) expandtab
+    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl|ruby|java|python) expandtab
     # these languages will use `noexpandtab' behavior
     hook global WinSetOption filetype=(makefile|gas) noexpandtab
     # these languages will use `smarttab' behavior
