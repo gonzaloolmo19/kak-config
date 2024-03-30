@@ -12,6 +12,7 @@ source "%val{config}/user/zellij.kak"
 source "%val{config}/user/small_commands.kak"
 source "%val{config}/user/zk.kak"
 source "%val{config}/user/broot.kak"
+source "%val{config}/user/tal.kak"
 source "%val{config}/user/mappings.kak"
 
 
@@ -66,6 +67,10 @@ plug "andreyorst/fzf.kak"
 # [[ Language specific ]]
 hook global WinSetOption filetype=ruby %{
     set-option buffer indentwidth 2
+}
+
+hook global WinSetOption filetype=rust %{
+    set-option buffer formatcmd "rustfmt" 
 }
 
 

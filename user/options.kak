@@ -2,7 +2,7 @@
 
 # [[ Options ]]
 
-colorscheme kanagawa
+colorscheme catppuccin_mocha
 
 # Pongo el flag -j8 para que paralelice la compilacion de las cosas
 set-option global makecmd 'make -j8'
