@@ -3,6 +3,10 @@
 # [[ Mappings ]]
 map global user / ':grepfile<ret>'                                                  -docstring 'grep in curren buffer'
 
+# System clipboard
+map global user y '<a-|>xclip -i -selection clipboard<ret>'                         -docstring 'yeet to system clipboard'
+map global user p '!xclip -o<ret>'                                                  -docstring 'paste from system clipboard'
+
 # file pickers
 map global user b ':open_buffer_picker<ret>'                                        -docstring 'pick buffer'
 map global user f ':open_file_picker<ret>'                                          -docstring 'pick file'
