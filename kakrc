@@ -35,7 +35,7 @@ plug "kakoune-lsp/kakoune-lsp" do %{
     mkdir -p ~/.config/kak-lsp
     cp -n kak-lsp.toml ~/.config/kak-lsp/
 }
-hook global WinSetOption filetype=(rust|python|c|cpp|ruby|java|bash|markdown|latex|nim) %{
+hook global WinSetOption filetype=(rust|python|c|cpp|ruby|java|bash|markdown|latex|nim|haskell|elixir|go) %{
     lsp-enable-window
     lsp-inlay-hints-enable global
 }
@@ -52,9 +52,9 @@ plug "andreyorst/smarttab.kak" defer smarttab %{
     set-option global softtabstop 4
 } config %{
     # these languages will use `expandtab' behavior
-    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl|ruby|java|python|nim) expandtab
+    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl|ruby|java|python|nim|haskell|elixir) expandtab
     # these languages will use `noexpandtab' behavior
-    hook global WinSetOption filetype=(makefile|gas) noexpandtab
+    hook global WinSetOption filetype=(makefile|gas|go) noexpandtab
     # these languages will use `smarttab' behavior
     hook global WinSetOption filetype=(c|cpp) smarttab
 
@@ -64,8 +64,14 @@ plug "andreyorst/smarttab.kak" defer smarttab %{
 plug "andreyorst/fzf.kak"
 
 
+# uxn
+plug "https://git.sr.ht/~athorp96/uxntal.kak"
+
+
 # [[ Language specific ]]
-hook global WinSetOption filetype=(ruby|nim) %{
+#
+# This is for language that do 2 space tabs
+hook global WinSetOption filetype=(ruby|nim|elixir) %{
     set-option buffer indentwidth 2
 }
 
