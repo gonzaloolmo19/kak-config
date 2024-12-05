@@ -2,6 +2,7 @@
 
 # [[ Options ]]
 
+eval %sh{ kak-tree-sitter -dks --init $kak_session }
 colorscheme catppuccin_mocha
 
 # Pongo el flag -j8 para que paralelice la compilacion de las cosas
