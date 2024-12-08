@@ -1,9 +1,9 @@
 # author: gonzaloolmo19
-# It is a wrapper the :make command (also a
-# wrapper). It simply changes the makecmd to 'just', runs the :make command 
+# It is a wrapper of the :make command (also a
+# wrapper). It simply changes the makecmd to 'just', runs the :make command
 # and sets makecmd to the value it had before. Effectively, it just runs the
 # just command, and shows its output in a new buffer. It can be very useful
-# for linting, running, etc. In general, running just commands.
+# for linting, building, running, etc. In general, running just commands.
 
 define-command -params .. \
     -docstring %{
@@ -14,3 +14,5 @@ define-command -params .. \
             execute-keys ':make $@<ret>'
             set-option global makecmd '$kak_opt_makecmd'"
 }}
+
+alias global j just
